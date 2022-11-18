@@ -2,12 +2,11 @@ PKG             := openslide
 $(PKG)_WEBSITE  := https://openslide.org/
 $(PKG)_DESCR    := C library for reading virtual slide images.
 $(PKG)_IGNORE   :=
-$(PKG)_VERSION  := 3.4.3
-$(PKG)_CHECKSUM := 173fe087dba00dac722f55ef5255a3f255f5150b01b3a1fb441dd84437fcac4d
+$(PKG)_VERSION  := 3.4.1
+$(PKG)_TAG_REF  := 2022-11-18
+$(PKG)_CHECKSUM := 73a5eb30a2201242bf9eb0f424eef03a6fc7f049e76f82f28186d8f2b1c5c143
 $(PKG)_PATCHES  := $(realpath $(sort $(wildcard $(dir $(lastword $(MAKEFILE_LIST)))/patches/$(PKG)-[0-9]*.patch)))
-$(PKG)_SUBDIR   := openslide-$($(PKG)_VERSION)
-$(PKG)_FILE     := openslide-$($(PKG)_VERSION).tar.gz
-$(PKG)_URL      := https://s3.ap-northeast-1.amazonaws.com/build.aixmed.com/openslide/$($(PKG)_FILE)
+$(PKG)_GH_CONF  := openslide/openslide/releases
 $(PKG)_DEPS     := cc zlib cairo gdk-pixbuf libjpeg-turbo tiff openjpeg sqlite
 
 define $(PKG)_BUILD
